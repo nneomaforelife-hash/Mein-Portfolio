@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio von Nneoma Juliet Micah</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #121212;
+      color: #e0e0e0;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, #1a1a1a, #242424);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      letter-spacing: 2px;
+      color: #00bcd4;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project {
+      background-color: #1f1f1f;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1rem;
+    }
+
+    .project-content h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #00bcd4;
+    }
+
+    .project-content p {
+      font-size: 0.95rem;
+      color: #cfcfcf;
+      margin-top: 0.5rem;
+    }
+
+    /* Pop-up styles */
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+      padding: 1rem;
+    }
+
+    .popup-content {
+      background-color: #1f1f1f;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+      overflow-y: auto;
+      max-height: 90%;
+    }
+
+    .popup-content h2 {
+      color: #00bcd4;
+    }
+
+    .popup-content p {
+      margin-top: 1rem;
+      color: #e0e0e0;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    .close {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      font-size: 2rem;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #888;
+      font-size: 0.9rem;
+    }
+
+    a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Portfolio von Nneoma Juliet Micah</h1>
+  </header>
+
+  <main>
+    <!-- Projekt 1: Miniaturwelt -->
+    <div class="project" onclick="openPopup('popup1')">
+      <img src="miniaturwelt.jpg" alt="Miniaturwelt">
+      <div class="project-content">
+        <h2>Miniaturwelt</h2>
+        <p>Mein Projekt – Miniaturwelt mit Bericht.</p>
+      </div>
+    </div>
+
+    <!-- Projekt 2: Designvorlage -->
+    <div class="project" onclick="openPopup('popup2')">
+      <img src="designvorlage.jpg" alt="Designvorlage">
+      <div class="project-content">
+        <h2>Designvorlage</h2>
+        <p>Eine selbst erstellte Bedienungsanleitung.</p>
+      </div>
+    </div>
+
+    <!-- Projekt 3: Video-Projekt -->
+    <div class="project" onclick="openPopup('popup3')">
+      <img src="video-thumbnail.jpg" alt="Video-Projekt">
+      <div class="project-content">
+        <h2>Video-Projekt</h2>
+        <p>Ein geschnittenes Video, das ich erstellt habe.</p>
+      </div>
+    </div>
+  </main>
+
+  <!-- Pop-up Projekt 1 -->
+  <div id="popup1" class="popup">
+    <span class="close" onclick="closePopup('popup1')">&times;</span>
+    <div class="popup-content">
+      <h2>Miniaturwelt</h2>
+      <p>Dieses Projekt habe ich erstellt. 
+      Hier kannst du den Projektbericht öffnen:</p>
+      <!-- projektbericht.pdf -->
+      <p><a href="projektbericht.pdf" target="_blank">Projektbericht öffnen (PDF)</a></p>
+    </div>
+  </div>
+
+  <!-- Pop-up Projekt 2: Designvorlage -->
+<div id="popup2" class="popup">
+  <span class="close" onclick="closePopup('popup2')">&times;</span>
+  <div class="popup-content">
+    <h2>Designvorlage</h2>
+    <p>Eine selbst gestaltete Bedienungsanleitung für ICT, das Kreativität, Farbwahl und Layoutfähigkeiten zeigt.</p>
+    <!-- design.pdf -->
+    <p><a href="design.pdf" target="_blank">Designvorlage als PDF öffnen</a></p>
+  </div>
+</div>
+
+  <!-- Pop-up Projekt 3 -->
+  <div id="popup3" class="popup">
+    <span class="close" onclick="closePopup('popup3')">&times;</span>
+    <div class="popup-content">
+      <h2>Video-Projekt</h2>
+      <p>Ein Video das ich für Biologie bearbeitet habe. Du kannst es direkt hier anschauen:</p>
+      <!--meinvideo.mp4: -->
+      <video width="100%" controls>
+        <source src="meinvideo.mp4" type="video/mp4">
+        Dein Browser unterstützt dieses Video nicht.
+      </video>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Nneoma Juliet Micah – Portfolio
+  </footer>
+
+  <script>
+    function openPopup(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+
+    function closePopup(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script>
+</body>
+</html>
